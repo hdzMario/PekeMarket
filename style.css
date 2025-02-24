@@ -35,6 +35,14 @@ img{
     padding: 70px;
 }
 
+.header-productos{
+    display: flex;
+    align-items: center;
+    min-height: 15vh;
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
 .menu{
     position: absolute;
     top: 0;
@@ -51,18 +59,22 @@ img{
     margin: 10px;
     width: 120px;
 }
-/*Logo pekemarket en letras
-.logo{
+
+
+/*Logo pekemarket en letras*/
+.logo1{
     font-size: 25px;
     color: #f5862c;
     text-transform: uppercase;
+    transform: translate(100px);
     font-weight: 800;
+    margin-left: 20px;
 }
 
 .logo2{
     font-size: 25px;
     color: #35dd51;
-    transform: translate(-110px);
+    transform: translate(-10px);
     text-transform: uppercase;
     font-weight: 800;
 }
@@ -70,17 +82,23 @@ img{
 .logo3{
     font-size: 25px;
     color: #2dc6ec;
-    transform: translate(-220px);
+    transform: translate(-60px);
     text-transform: uppercase;
     font-weight: 800;
 }
-*/
+
+
+
+
+
+
 
 .menu .navbar ul li {
     position: relative;
     float: left;
     transform: translate(-300px);
 }
+
 
 .menu .navbar ul li a {
     font-size: 18px;
@@ -192,6 +210,21 @@ th, td{
     display: flex;
     justify-content: space-between;
     padding-bottom: 25px;
+    /*grid-template-columns: repeat(3, 1fr);*/
+}
+
+.oferta-productos{
+    padding: 20px 0 0 0;
+    display:grid;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
 }
 
 .ofert-1{
@@ -200,11 +233,17 @@ th, td{
     flex-basis: calc(33.3% - 15px);
     background-color: #F5F5F5;
     padding: 35px;
+    margin: 20px;
+    border-radius: 30px;
 }
 
 .ofert-img{
     flex-basis: 50%;
     margin-right: 15px;
+}
+
+.img-bordeP{
+    border-radius: 10px;
 }
 
 .ofert-img img {
@@ -288,7 +327,7 @@ th, td{
     padding-top: 60px;
     padding-left: 0;  /* IZQUIERDA */
     padding-right: 0; /* DERECHA   */
-    padding-bottom: 100px;
+    padding-bottom: 70px;
     /*padding: 550px, 0 100px 0; 50 px hacia arriba, cero a la derecha, 100px hacia abajo, cero hacia la izquierda*/
     display: flex;
     justify-content: space-between;
@@ -301,14 +340,14 @@ th, td{
     display: flex; 
     align-items: center;
     justify-content: space-between;
-    padding: 25px;
-    padding-left: 0;
+    padding: 35px;
+    padding-left: 10px;
     background-color: #F5F5F5;
 }
 
 .icon-img{
-    width: 100px;
-    padding: 5px;
+    width: 200px;
+    padding: 15px;
 }
 
 .icon-txt h3{
@@ -316,6 +355,7 @@ th, td{
     color: #111111;
     font-family: 'Oswald',sans-serif;
     text-transform: uppercase;
+    margin: 10px;
 }
 
 .icon-txt p{
@@ -355,14 +395,20 @@ th, td{
 /*ULTIMA PARTE DEL DOCUMENTO FOOTER*/
 
 .footer{
-    padding: 50px 0;
+    padding: 50px 10px;
     background-color: #111111;
     margin: 2px;
 }
 
 .footer-content{
     display: flex;
-    justify-content: space-between;
+    justify-content:initial;
+    margin-left: 100px;
+}
+
+.link{
+    max-width: 265px;
+    margin: 20px;
 }
 
 .link h3{
@@ -370,7 +416,7 @@ th, td{
     color: #ffffff;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .link a{
@@ -379,6 +425,111 @@ th, td{
     margin-bottom: 10px;
 }
 
+
+.contenedorRedes{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/*Se le aplico una clase porque no agarraba la propiedad space between*/
+/*Titulo h3 del footer WhatsApp*/
+.whatsapp {
+    justify-content: left;
+    align-items: left;
+    transform: translate(-75px);
+}
+
+
+.contenedorRedes img{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+
+
+/*LINEA DIVISORIA EN EL FOOTER*/
+hr{
+    border: 0;
+    border-top: 3px solid #ffffff; 
+    border-bottom: 2px solid #333;
+    height: 0px;
+    
+    margin: 20px;
+}
+
+.modal li{
+    list-style-type:square;
+}
+
+.link hr{
+    width: 275px;
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    height: 1px;
+}
+
+/*####################################### CLASE MODAL ##############################################################################*/
+
+.modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;  
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+    
+  }
+  
+  .show {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  
+  .modal {
+    background-color: #fff;
+    width: 1000px;
+    max-height: 80%;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: justify;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  
+  .modal h1 {
+    margin: 3px;
+  }
+  
+  .modal p {
+    /*opacity: 0.9;*/
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .btnModal-2{
+    display:inline-block;
+    padding: 7PX 10PX;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 10PX;
+    font-size: 15PX;
+    margin-top: 15px;
+}
+
+/*####################################### CLASE MODAL ##############################################################################*/
 
 /* mediaquery - TRABAJAMOS LA PARTE RESPONSIVE DE LA WEB*/
 
